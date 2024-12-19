@@ -1,11 +1,9 @@
 package com.example.application.views.imagegallery;
 
+import com.vaadin.flow.component.html.*;
+
 import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.HasStyle;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.Main;
-import com.vaadin.flow.component.html.OrderedList;
-import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
@@ -61,7 +59,17 @@ public class ImageGalleryView extends Main implements HasComponents, HasStyle {
         header.addClassNames(Margin.Bottom.NONE, Margin.Top.XLARGE, FontSize.XXXLARGE);
         Paragraph description = new Paragraph("Royalty free photos and pictures, courtesy of Unsplash");
         description.addClassNames(Margin.Bottom.XLARGE, Margin.Top.NONE, TextColor.SECONDARY);
-        headerContainer.add(header, description);
+Span badge = new Span("Badge5");
+badge.getElement().getThemeList().add("badge success");
+headerContainer.add(header, description);
+Span badge2 = new Span("Badge2");
+badge2.getElement().getThemeList().add("badge success");
+
+        var div = new Div();
+        div.addClassNames("timon-stinkt");
+        div.add(badge, badge2);
+
+headerContainer.add(div);
 
         Select<String> sortBy = new Select<>();
         sortBy.setLabel("Sort by");
